@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=no">
+  <meta name="theme-color" content="#00008B">
+  <title>MyPlayer</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <audio controls id="song">
+    <source src="rock.mp3" type="audio/mpeg">
+  </audio>
+  
+  <div class="myname">@Arvind_prajapati</div>
+  <section class="backward" ondblclick="backward()"></section>
+  <section class="forward" ondblclick="forward()"></section>
+
+  <section class="main">
+    <main>
+      <img src="" class="songimg" />
+      <div class="song-name">
+        &#9835; &nbsp;<small></small>
+      </div>
+      <section class="content">
+        <table width="100%">
+          <tr class="previous" onclick="pre()"></tr>
+          <tr class="current"></tr>
+          <tr class="nextSong" onclick="next()"></tr>
+        </table>
+      </section>
+
+      <div class="progress">
+        <div></div>
+      </div>
+      <section class="time">
+        <small id="ct"></small>
+        <small id="ct">/</small>
+        <small id="dur"></small>
+      </section>
+    </main>
+    <script src="script.js"></script>
+
+    <section class="menu">
+      <div style="position:sticky; top:0px; padding:5px 5px 0px 5px; background:white;">
+        <table width="100%">
+          <tr>
+            <td width="15px"><h2>&#9836;</h2></td>
+            <td>Musics
+              <small>(
+                <script>
+                  document.write(listLength);
+                </script>
+                )
+              </small>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script>
+        displaySongList();
+      </script>
+    </section>
+  </section>
+
+  <section class="floating-btn">
+    <svg viewBox="0 0 40 40" class="pre" onclick="pre()">
+      <polygon points="10,20 30,10 30,30 " fill="white"></polygon>
+      <line x1="10" y1="10" x2="10" y2="30" stroke="white" stroke-width="2"></line>
+    </svg>
+    <svg viewBox="0 0 40 40" class="play" onclick="play()">
+      <polygon points="15,10 31,20 15,30 " fill="white"></polygon>
+    </svg>
+    <svg viewBox="0 0 40 40" class="pause" onclick="pause()">
+      <line x1="13" y1="10" x2="13" y2="30" stroke="white" stroke-width="5"></line>
+      <line x1="28" y1="10" x2="28" y2="30" stroke="white" stroke-width="5"></line>
+    </svg>
+  
+    <svg viewBox="0 0 40 40" class="next" onclick="next()">
+      <polygon points="10,10 10,30 30,20 " fill="white"></polygon>
+      <line x1="31" y1="10" x2="31" y2="31" stroke="white" stroke-width="2"></line>
+    </svg>
+  </section>
+  
+</body>
+</html>
